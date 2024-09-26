@@ -63,6 +63,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
+      // { text: 'Study', link: '/study' },
       { text: 'Docs', link: '/overview/getting-started.html' },
       { text: 'Showcase', link: '/showcase' },
       {
@@ -85,6 +86,7 @@ export default defineConfig({
         text: 'Overview',
         collapsed: false,
         items: [
+          { text: 'My Study Plan', link: '/overview/my-study-plan' },
           { text: 'Introduction', link: '/overview/introduction' },
           { text: 'Getting Started', link: '/overview/getting-started' },
           { text: 'Installation', link: '/overview/installation' },
@@ -209,11 +211,8 @@ export default defineConfig({
     css: {
       postcss: {
         plugins: [
-          // @ts-expect-error nocheck
           tailwind(),
-          // @ts-expect-error nocheck
           autoprefixer(),
-          // @ts-expect-error nocheck
           postcssIsolateStyles({ includeFiles: [/vp-doc\.css/] }),
         ],
       },
