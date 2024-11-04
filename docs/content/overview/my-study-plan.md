@@ -9,9 +9,52 @@ description: A Plan to study Radix Vue.
 A Plan to study Radix Vue.
 </Description>
 
-- understand project structure
-  - root config files
+## Understand Package
 
-- https://utfs.io/f/PDTJB1rIj6xdbdfnQKPg0VYntNJEoqLXk3IpUR9d2SwCmfTH
-- https://utfs.io/f/PDTJB1rIj6xdP4koqprIj6xdUKEr87HB3AtbPYynsG9v0qgh
-- https://utfs.io/f/PDTJB1rIj6xdUmx8BoQeliEYHQfO0zZtqDSaCbJwc7sTmjvu
+- root package
+  - [ ] workspaces
+    - plugin
+    - radix-vue
+  - [ ] script
+    -
+    -
+    -
+
+```bash
+story:dev
+# find .histoire repo, run its story:dev script(histoire dev), and open
+pnpm --filter histoire story:dev --open
+
+```
+
+```bash
+build
+# remove dist first
+# find radix-vue repo, and run its build script
+# find plugin repo, and run its build script (which rely on radix dist)
+rimraf packages/radix-vue/dist  && pnpm run --filter radix-vue build && pnpm run --filter plugins build
+
+build-only
+# remove dist first
+# -r means --recursive all packages, and run their build-only script
+rimraf packages/radix-vue/dist  && pnpm run -r build-only
+```
+
+```bash
+# find docs repo, and run its install script(install deps)
+pnpm --filter docs install
+
+# find docs repo, and run its docs:dev script(vitepress dev)
+pnpm --filter docs docs:dev
+
+# find docs repo, and run its docs:build script(vitepress build)
+pnpm --filter docs docs:build
+
+# find docs repo, and run its docs:gen script(tsx scripts/autogen.ts)
+pnpm --filter docs docs:gen
+
+#
+pnpm --filter docs docs:contributors
+
+# docs scripts
+```
