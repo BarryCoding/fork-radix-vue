@@ -1,8 +1,6 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import HomePage from '../components/HomePage.vue'
-import HomePageDemo from '../components/HomePageDemo.vue'
 import Announcement from '../components/Announcement.vue'
 import EmbedIframe from '../components/EmbedIframe.vue'
 import ComponentPreview from '../components/ComponentPreview.vue'
@@ -23,7 +21,6 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'home-hero-info-before': () => h(Announcement),
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'home-features-after': () => h('div', [h(HomePageDemo), h(HomePage)]),
     })
   },
   enhanceApp({ app }) {

@@ -2,16 +2,12 @@ import { defineConfig, postcssIsolateStyles } from 'vitepress'
 import autoprefixer from 'autoprefixer'
 import tailwind from 'tailwindcss'
 import {
-  discord,
   font,
-  github,
   ogImage,
   ogUrl,
   radixVueDescription,
   radixVueName,
-  releases,
 } from './meta'
-import { version } from '../../package.json'
 import { teamMembers } from './contributors'
 import ComponentPreviewPlugin from './plugins/ComponentPreview'
 import InstallationTabsPlugin from './plugins/InstallationTabs'
@@ -65,16 +61,6 @@ export default defineConfig({
     nav: [
       // { text: 'Study', link: '/study' },
       { text: 'Docs', link: '/overview/getting-started.html' },
-      { text: 'Showcase', link: '/showcase' },
-      {
-        text: `v${version}`,
-        items: [
-          {
-            text: 'Release Notes ',
-            link: releases,
-          },
-        ],
-      },
     ],
     outline: {
       level: [2, 3],
@@ -175,20 +161,8 @@ export default defineConfig({
       },
     ],
 
-    socialLinks: [
-      { icon: 'discord', link: discord },
-      { icon: 'github', link: github },
-    ],
-
     search: {
       provider: 'local',
-    },
-    editLink: {
-      pattern: 'https://github.com/unovue/radix-vue/edit/main/docs/content/:path',
-    },
-    carbonAds: {
-      code: 'CW7DV27J',
-      placement: 'wwwradix-vuecom',
     },
   },
   srcDir: 'content',

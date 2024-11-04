@@ -176,3 +176,12 @@ button:focus-visible {
 .fade-leave-to {
   opacity: 0;
 }
+
+/* I want zen reading mode without nav sidebar aside */
+.VPNav, .VPSidebar, .VPDoc>.container>.aside{
+  opacity: 0 !important;
+  transition: all 0.3s ease-in-out !important;
+}
+.VPNav:hover, .VPSidebar:hover, .VPDoc>.container>.aside:hover{
+  opacity: 1 !important;
+}
